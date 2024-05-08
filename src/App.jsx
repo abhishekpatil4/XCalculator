@@ -4,6 +4,11 @@ import './App.css'
 function App() {
   const [cur, setCur] = useState("");
   const [res, setRes] = useState();
+
+  const handleCalc = () => {
+    
+  }
+  
   return <>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <h1>React Calculator</h1>
@@ -16,28 +21,28 @@ function App() {
       }
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} >
         <div>
-          <button className="custom-button">7</button>
-          <button className="custom-button">8</button>
-          <button className="custom-button">9</button>
-          <button className="custom-button">+</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "7")}>7</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "8")}>8</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "9")}>9</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "+")}>+</button>
         </div>
         <div>
-          <button className="custom-button">4</button>
-          <button className="custom-button">5</button>
-          <button className="custom-button">6</button>
-          <button className="custom-button">-</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "4")}>4</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "5")}>5</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "6")}>6</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "-")}>-</button>
         </div>
         <div>
-          <button className="custom-button">1</button>
-          <button className="custom-button">2</button>
-          <button className="custom-button">3</button>
-          <button className="custom-button">*</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "1")}>1</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "2")}>2</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "3")}>3</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "*")}>*</button>
         </div>
         <div>
-          <button className="custom-button">C</button>
-          <button className="custom-button">0</button>
-          <button className="custom-button">=</button>
-          <button className="custom-button">/</button>
+          <button className="custom-button" onClick={() => setCur([])}>C</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "0")}>0</button>
+          <button className="custom-button" onClick={(handleCalc)}>=</button>
+          <button className="custom-button" onClick={() => setCur((prev) => prev + "/")}>/</button>
         </div>
       </div>
     </div>
