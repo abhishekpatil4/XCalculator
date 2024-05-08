@@ -6,7 +6,11 @@ function App() {
   const [res, setRes] = useState();
 
   const handleCalculate = () => {
-    setRes(eval(cur))
+    if(cur == ""){
+      setRes("Error");
+    }else{
+      setRes(eval(cur))
+    }
   }
   return <>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
