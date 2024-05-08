@@ -5,17 +5,16 @@ function App() {
   const [cur, setCur] = useState("");
   const [res, setRes] = useState();
 
-  const handleCalc = () => {
-    
+  const handleCalculate = () => {
+    setRes(eval(cur))
   }
-  
   return <>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <h1>React Calculator</h1>
       <input type="text" value={cur} style={{ margin: '30px', minWidth: "200px" }} />
       {
-        res && 
-        <div style={{ marginBottom:'10px', fontSize:'25px', color:"gray"}}>
+        res &&
+        <div style={{ marginBottom: '10px', fontSize: '25px', color: "gray" }}>
           {res}
         </div>
       }
@@ -39,9 +38,9 @@ function App() {
           <button className="custom-button" onClick={() => setCur((prev) => prev + "*")}>*</button>
         </div>
         <div>
-          <button className="custom-button" onClick={() => setCur([])}>C</button>
+          <button className="custom-button" onClick={() => {setCur([]); setRes([])}}>C</button>
           <button className="custom-button" onClick={() => setCur((prev) => prev + "0")}>0</button>
-          <button className="custom-button" onClick={(handleCalc)}>=</button>
+          <button className="custom-button" onClick={handleCalculate}>=</button>
           <button className="custom-button" onClick={() => setCur((prev) => prev + "/")}>/</button>
         </div>
       </div>
