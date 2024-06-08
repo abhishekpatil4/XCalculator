@@ -1,4 +1,4 @@
-#XCalculator
+# XCalculator
 
 This is a simple calculator application built using ReactJS and Vite.
 
